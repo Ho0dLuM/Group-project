@@ -2,7 +2,7 @@ $(function() {
   'use strict';
   console.log('sanity check');
   Stripe.setPublishableKey('pk_test_IDkwCdtBuXpEeMz1Nq5JOHe1'); //Stripe.js card validator api
-
+  //Probably use a loop here to copy this data
   $('#copy').click(function() { //copy shipping to billing
     $('#firstNameBilling').val($('#firstNameShipping').val());
     $('#lastNameBilling').val($('#lastNameShipping').val());
@@ -24,7 +24,7 @@ $('form').on('submit', function(event) {
   if ($('#lastNameShipping').val() !== 'Trump') {
 
     event.preventDefault();
-    console.log('hijacked');
+    //console.log('hijacked');
     var creditNumber = $('#creditNumber').val();
     var creditExpiration = $('#creditExpiration').val();
     var creditCvc = $('#creditCvc').val();

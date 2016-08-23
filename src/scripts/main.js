@@ -7,6 +7,7 @@ $(function() {
     method: 'GET'
   }).done(function(results) {
         var arr = [];
+        //maybe use a forEach loop?
         for (var i = 0; i < 3; i++) {
           arr.push(results[Math.floor(Math.random() * results.length)]);
         }
@@ -64,7 +65,6 @@ $(function() {
     var $i = $carousel.find($slide + '.active').index();
     slides().eq($i).removeClass('active');
     slides().eq($i).hide();
-    //Start looping through images
     if (slides().length === $i + 1) $i = -1;
     slides().eq($i + 1).fadeIn();
     slides().eq($i + 1).addClass('active');
@@ -75,7 +75,6 @@ $(function() {
     var $i = $carousel.find($slide + '.active').index();
     slides().eq($i).removeClass('active');
     slides().eq($i).hide();
-    //Start looping through images
     if (slides().length === $i - 1) $i = +1;
     slides().eq($i - 1).fadeIn();
     slides().eq($i - 1).addClass('active');
@@ -107,7 +106,7 @@ function createShoppingList(productObjArr, totalPrice) {
 function randomStar() {
   var starNumber = Math.floor((Math.random() * 10) + 1) / 2;
   var fullStarBar = [];
-
+  //maybe use a forEach loop here?
   for (var i = 0; i < 5; i++) {
     if (starNumber > 0.5) {
       fullStarBar.push('<i class="fa fa-star" aria-hidden="true"></i>');
